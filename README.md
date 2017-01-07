@@ -1,6 +1,6 @@
 # Nibbles for VB.NET
 
-This is a remake of [QBasic Nibbles](https://en.wikipedia.org/wiki/Nibbles_(video_game) in VB.NET.
+This is a remake of [QBasic Nibbles](https://en.wikipedia.org/wiki/Nibbles_(video_game)) in VB.NET.
 QBasic Nibbles was published with MS-DOS version 5.0 or above, and served as an example of what QBasic can do.
 
 Nibbles for VB.NET is intended to be an example program for beginners in their first year of programming.
@@ -10,7 +10,7 @@ Nibbles for VB.NET is intended to be an example program for beginners in their f
 
 ## Playing the game
 
-If you just want to try the game, download the binary and just run it.
+If you just want to try the game, go to [the latest release](https://github.com/lwchkg/nibbles_vbnet/releases/latest), download the binary and just run it.
 Then follow the in-game instructions.
 
 But as an example program, it is much more useful to download the source instead by the following instructions:
