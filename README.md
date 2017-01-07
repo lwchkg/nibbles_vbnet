@@ -19,7 +19,7 @@ But as an example program, it is much more useful to download the source instead
    The Community Version of Visual Studio is free to use for open-source projects including this one.
    _Warning: installation takes several hours._
 
-1. Click the green “Clone or download” button, then press “Download ZIP”.
+1. Click the green “Clone or download” button, then press “Download ZIP”.
 
 1. Right-click on the downloaded file, click “Extract All...”, then click “Extract”.
 
@@ -45,7 +45,7 @@ This happens with Windows console if a TrueType font is used. To solve this, eit
   However, even the largest raster font available is likely to be too small for you.
   Also, the arrows in the game introduction will not show properly.
 
-* Play the game using [ConEmu](https://conemu.github.io/) or a similar program.
+* Play the game using [ConEmu](https://conemu.github.io/), that disables ClearType on the half-block characters.
   You should set the console to something larger than 80×25 if you choose this solution.
 
 ## Programming styles
@@ -104,7 +104,7 @@ To build the sound:
 * If player’s head collide, both die and they do not score even if they hit the number.
   In the QBasic game, Sammy (player 1) gets the score. The players still die unless they are hitting a “9”.
 
-* If both players are hitting the number at the same time, a random player gets the score if their heads don’t collide.
+* If both players are hitting the number at the same time, a random player gets the score if their heads don’t collide.
   In the QBasic game, Sammy (player 1) always get the score.
 
 * It is possible to have one player levelling up and the other dying at the same time.
