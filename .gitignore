@@ -250,3 +250,8 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+# Sound output
+*.mmpz.bak
+audio/*.wav
+audio/out
