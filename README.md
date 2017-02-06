@@ -13,7 +13,7 @@ Nibbles for VB.NET is intended to be an example program for beginners in their f
 If you just want to try the game, go to [the latest release](https://github.com/lwchkg/nibbles_vbnet/releases/latest), download the binary and just run it.
 Then follow the in-game instructions.
 
-But as an example program, it is much more useful to download the source instead by the following instructions:
+But as an example program, it is much more useful to download the source instead, by the following instructions:
 
 1. Install Visual Studio if you did not already install it.
    The Community Version of Visual Studio is free to use for open-source projects including this one.
@@ -24,7 +24,7 @@ But as an example program, it is much more useful to download the source instead
 1. Right-click on the downloaded file, click “Extract All...”, then click “Extract”.
 
 1. Open `nibbles\_vbnet.sln`.
-   After that you are free to tinker with the source.
+   After that, you are free to tinker with the source.
 
 _Note: exact wordings are different if your Windows installation is not in American English. The same applies for all instructions below._
 
@@ -32,25 +32,27 @@ _Note: exact wordings are different if your Windows installation is not in Ameri
 
 **The squares appears to be malformed.**
 
-This is a problems using a non-English font, such as MS Gothic or MingLiU.
+This is a problem using a non-English font, such as MS Gothic or MingLiU.
 To solve the problem, right-click the title bar, click “Properties”, go to the “Font” tab, and then select the font “Consolas”.
 
 If you are still unsure what to do, see [this tutorial by iSunShare Studio](http://www.isunshare.com/windows-10/change-font-and-font-size-in-windows-10-command-prompt.html).
 
-**There are some one-pixel wide lines in the display.**
+**There are some one pixel wide lines in the display.**
 
 This happens with Windows console if a TrueType font is used. To solve this, either:
 
+* Play the game using [ConEmu](https://conemu.github.io/), that disables ClearType on the half-block characters.
+  There is a ConEmu loaded binary in the [Release](https://github.com/lwchkg/nibbles_vbnet/releases) section.
+  If you install ConEmu yourself, you should set the console to at least 80×25..
+
 * Change to “Raster Fonts” in the font settings.
   However, even the largest raster font available is likely to be too small for you.
-  Also, the arrows in the game introduction will not show properly.
-
-* Play the game using [ConEmu](https://conemu.github.io/), that disables ClearType on the half-block characters.
-  You should set the console to something larger than 80×25 if you choose this solution.
+  Also, the arrow symbols in the game introduction will not show properly.
+  In addition, this is tested NOT to work on Windows 7.
 
 ## Programming styles
 
-Considering this is an example for a first year coder, only a limited set of features are used.
+Considering this is an example for a first-year coder, only a limited set of features are used.
 Here is a list of trade-offs in the program:
 
 * Classes are not used, except for existing classes in the .NET platform.
@@ -68,15 +70,15 @@ Here is a list of trade-offs in the program:
 * The separation of user interface and the business logic is not complete, and some strings are hard-coded.
   Complete separation is infeasible for a programmer in his or her first year.
 
-And here are some non-tradeoffs.
+And here are some non-tradeoffs:
 
 * Using `AndAlso` and `OrElse` instead of `And` and `Or`.
-  The use of short-circuiting operatiors (`AndAlso` and `OrElse`) is a must to learn, because logical operators of most computer languages are short-circuiting.
+  The use of short-circuiting operators (`AndAlso` and `OrElse`) is a must to learn because logical operators of most computer languages are short-circuiting.
 
 * Not observing the single-exit rule in structured programming practice.
   This rule helped in the old days because it was easy to forget deallocating resources (e.g. memory, file handle).
   Things work differently in VB.NET with destructors and exception handling, and single-exit does not help anymore.
-  Instead, the single-exit rule often make control flows difficult to read.
+  Instead, the single-exit rule often makes control flows difficult to read.
 
 ## Level set, sound, and copyright issues
 
@@ -89,13 +91,17 @@ To build the sound:
 
 1. Install [Chocolatey](https://chocolatey.org/install).
 
-1. Install LMMS and ffmpeg via Chocolatey: `choco install lmms ffmpeg -y`
+1. Install LMMS and FFmpeg via Chocolatey: `choco install lmms ffmpeg -y`
 
 1. Execute `audio\makeaudio.bat`.
 
-## Difference from original QBasic game
+## Differences from original QBasic game
 
 * The code is completely rewritten.
+
+* Both players can control the snake in the same frame.
+  In the QBasic game, only one keypress is handled per frame, player control or not.
+  So game control is crippled in 2-player games.
 
 * Levels are made more symmetric.
   Both players have equivalent start positions at all times.
@@ -108,6 +114,11 @@ To build the sound:
   In the QBasic game, Sammy (player 1) always get the score.
 
 * It is possible to have one player levelling up and the other dying at the same time.
-  In the QBasic game, levlling up makes the other snake not to die.
+  In the QBasic game, levelling up makes the other snake not to die.
 
 * The bug of the rotating stars in the introduction screen is fixed.
+
+## Todo
+
+* Make the game runnable on Linux using Mono.
+  Ideally the same binary should run on both platforms.
